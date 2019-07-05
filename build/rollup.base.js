@@ -46,7 +46,7 @@ const config = {
 			inject: false,
 			minimize: true,
 			sourceMap: true,
-			extract: pathResolve('./dist/assets/styles/website.css')
+			extract: pathResolve('./dist/assets/website.css')
 		}),
 		babel({
 			exclude: 'node_modules/**'
