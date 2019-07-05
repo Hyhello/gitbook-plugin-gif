@@ -4,6 +4,8 @@ const alias = require('rollup-plugin-alias');
 const babel = require('rollup-plugin-babel');
 const replace = require('rollup-plugin-replace');
 const { eslint } = require('rollup-plugin-eslint');
+const autoprefixer = require('autoprefixer');
+const postcss = require('rollup-plugin-postcss');
 const pkg = require('../package.json');
 const { pathResolve, toCamel } = require('./utils');
 const aliass = require('./alias.js');
@@ -24,7 +26,7 @@ const config = {
 	input: 'src/index.js',
 	output: [
 		{
-			format: 'umd',
+			format: 'cjs',
 			name: name,
 			file: pkg.main,
 			sourcemap: true,
@@ -38,6 +40,13 @@ const config = {
 		eslint({
 			formatter: require('eslint-friendly-formatter'),
 			include: ['src/**/*.js']
+		}),
+		postcss({
+			plugins: [autoprefixer],
+			inject: false,
+			minimize: true,
+			sourceMap: true,
+			extract: pathResolve('./dist/assets/styles/website.css')
 		}),
 		babel({
 			exclude: 'node_modules/**'

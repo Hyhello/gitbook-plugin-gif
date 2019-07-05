@@ -1,8 +1,8 @@
 {
-	"name": "hy-progress",
+	"name": "gitbook-plugin-gif",
 	"version": "0.0.1",
-	"description": "进度条",
-	"main": "./dist/progress.min.js",
+	"description": "gitbook-plugin-gif",
+	"main": "./dist/main.min.js",
 	"files": [
 		"src",
 		"dist",
@@ -17,7 +17,8 @@
 		"test": "jest --coverage"
 	},
 	"keywords": [
-		"progress"
+		"gitbook",
+		"plugin"
 	],
 	"author": "Hyhello",
 	"license": "MIT",
@@ -34,8 +35,12 @@
 			"git add ."
 		]
 	},
-	"engines": {
-		"node": ">=4.0.0"
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Hyhello/gitbook-plugin-gif.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Hyhello/gitbook-plugin-gif/issues"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.4.5",
@@ -44,6 +49,7 @@
 		"@babel/register": "^7.4.4",
 		"@commitlint/cli": "^8.0.0",
 		"@commitlint/config-conventional": "^8.0.0",
+		"autoprefixer": "^9.6.0",
 		"babel-eslint": "^10.0.2",
 		"babel-jest": "^24.8.0",
 		"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
@@ -62,20 +68,26 @@
 		"husky": "^2.4.1",
 		"jest": "^24.8.0",
 		"lint-staged": "^8.2.1",
+		"node-sass": "^4.12.0",
 		"prettier": "^1.18.2",
 		"pretty-quick": "^1.11.1",
 		"rollup": "^1.15.6",
 		"rollup-plugin-alias": "^1.5.2",
 		"rollup-plugin-babel": "^4.3.2",
 		"rollup-plugin-commonjs": "^10.0.0",
+		"rollup-plugin-copy": "^3.0.0",
 		"rollup-plugin-eslint": "^6.0.0",
 		"rollup-plugin-filesize": "^6.1.1",
 		"rollup-plugin-flow-no-whitespace": "^1.0.0",
 		"rollup-plugin-livereload": "^1.0.1",
 		"rollup-plugin-node-resolve": "^5.0.3",
+		"rollup-plugin-postcss": "^2.0.3",
 		"rollup-plugin-replace": "^2.2.0",
 		"rollup-plugin-serve": "^1.0.1",
 		"rollup-plugin-terser": "^5.0.0",
 		"rollup-watch": "^4.3.1"
+	},
+	"engines": {
+		"node": ">=4.0.0"
 	}
 }
