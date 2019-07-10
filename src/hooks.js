@@ -4,6 +4,8 @@
  * 描述：钩子
  */
 
+const reg = /\[(.*?)\]<(.*?)(?:\s+(.*))?>/gm;
+
 export default {
 	init(page) {
 		// 1 在解析书籍之前调用，然后生成输出和页面，只运行一次
@@ -12,6 +14,10 @@ export default {
 
 	'page:before': function pageBefore(page) {
 		// 2 在页面上运行模板引擎之前调用
+		const match = reg.exec(page.content);
+		if (match) {
+			console.log(match);
+		}
 		console.log('2', page);
 	},
 	page(page) {
