@@ -6,7 +6,6 @@
 
 /* eslint-disable */
 require(['gitbook', 'jQuery'], function toggle(gitbook, $) {
-	console.log($);
 	gitbook.events.bind('page.change', function change() {
 		console.log(gitbook.events);
 	});

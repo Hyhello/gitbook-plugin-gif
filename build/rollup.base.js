@@ -50,7 +50,8 @@ const config = {
 			extract: pathResolve('./dist/assets/website.css')
 		}),
 		babel({
-			exclude: 'node_modules/**'
+			exclude: 'node_modules/**',
+			runtimeHelpers: true
 		}),
 		copy({
 			targets: [{ src: 'src/assets/**/*.js', dest: 'dist/assets' }]

@@ -15,7 +15,7 @@ const svg = `<svg width="60" height="60" viewBox="0 0 60 60" class="GifPlayer-ic
 </svg>`;
 
 const tpl = `<div class="gitbook-plugin-gif">
-    <img src="_IMAGE_SRC" alt="_IMAGE_ALT" title="_IMAGE_TITLE"/>
+    <img src=_IMAGE_SRC alt=_IMAGE_ALT title=_IMAGE_TITLE data-gif=_IMGAGE_GIF/>
     ${svg}
 </div>`;
 
