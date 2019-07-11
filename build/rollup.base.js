@@ -6,6 +6,7 @@ const replace = require('rollup-plugin-replace');
 const { eslint } = require('rollup-plugin-eslint');
 const autoprefixer = require('autoprefixer');
 const postcss = require('rollup-plugin-postcss');
+const copy = require('rollup-plugin-copy');
 const pkg = require('../package.json');
 const { pathResolve, toCamel } = require('./utils');
 const aliass = require('./alias.js');
@@ -50,6 +51,9 @@ const config = {
 		}),
 		babel({
 			exclude: 'node_modules/**'
+		}),
+		copy({
+			targets: [{ src: 'src/assets/**/*.js', dest: 'dist/assets' }]
 		}),
 		replace({
 			__VERSION__: version,

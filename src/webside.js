@@ -9,5 +9,6 @@ import '@/assets/styles/b.scss';
 
 export default {
 	assets: './assets',
-	css: ['webside.css']
+	css: ['webside.css'],
+	js: ['toggle.js']
 };

@@ -4,7 +4,11 @@
  * 描述：钩子
  */
 
-const reg = /\[(.*?)\]<(.*?)(?:\s+(.*))?>/gm;
+import tpl from './template';
+
+console.log(tpl);
+
+const reg = /@\[(.*?)\]\((.*?)(?:\s+(.*))?\)/gm;
 
 export default {
 	init(page) {
@@ -14,11 +18,13 @@ export default {
 
 	'page:before': function pageBefore(page) {
 		// 2 在页面上运行模板引擎之前调用
-		const match = reg.exec(page.content);
-		if (match) {
-			console.log(match);
-		}
-		console.log('2', page);
+		page.content = page.content.replace(reg, (_, $1, $2, $3) => {
+			return tpl
+				.replace('_IMAGE_SRC', $1)
+				.replace('_IMAGE_ALT', $2)
+				.replace('_IMAGE_TITLE', $3 || '');
+		});
+		return page;
 	},
 	page(page) {
 		// 4 在输出和索引页面之前调用
