@@ -4,8 +4,10 @@
  * 描述：钩子
  */
 
+import path from 'path';
 import tpl from './template';
 
+console.log(path);
 const reg = /@\[(.*?)\]\((.*?)(?:\s+(.*))?\)/gm;
 
 function convertGifToPng(src) {
