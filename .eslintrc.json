@@ -2,7 +2,6 @@
 	"root": true,
 	"parser": "babel-eslint",
 	"env": {
-		"browser": true,
 		"es6": true,
 		"node": true
 	},
@@ -46,14 +45,5 @@
 				"extensions": [".ts", ".js", ".jsx", ".json"]
 			}
 		}
-	},
-	"overrides": [
-		{
-			"files": ["test/**/*.js"],
-			"env": {
-				"jest": true
-			},
-			"plugins": ["jest"]
-		}
-	]
+	}
 }

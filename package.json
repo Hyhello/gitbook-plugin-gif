@@ -12,7 +12,9 @@
 		"lint": "eslint --ext .js",
 		"lint:fix": "eslint --fix --ext .js",
 		"build": "cross-env NODE_ENV=production rollup -c build/rollup.prod.js",
-		"lint-staged": "pretty-quick --staged"
+		"dev": "rollup -c build/rollup.dev.js --watch",
+		"lint-staged": "pretty-quick --staged",
+		"test": "jest --coverage"
 	},
 	"keywords": [
 		"gitbook",
@@ -41,9 +43,15 @@
 		"url": "https://github.com/Hyhello/gitbook-plugin-gif/issues"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.4.5",
+		"@babel/node": "^7.4.5",
+		"@babel/preset-env": "^7.4.5",
+		"@babel/register": "^7.4.4",
 		"@commitlint/cli": "^8.0.0",
 		"@commitlint/config-conventional": "^8.0.0",
 		"autoprefixer": "^9.6.0",
+		"babel-eslint": "^10.0.2",
+		"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
 		"cross-env": "^5.2.0",
 		"eslint": "^5.16.0",
 		"eslint-config-airbnb-base": "^13.1.0",
@@ -53,7 +61,6 @@
 		"eslint-plugin-import": "^2.17.3",
 		"eslint-plugin-prettier": "^3.1.0",
 		"husky": "^2.4.1",
-		"jest": "^24.8.0",
 		"lint-staged": "^8.2.1",
 		"node-sass": "^4.12.0",
 		"prettier": "^1.18.2",
